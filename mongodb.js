@@ -1,13 +1,14 @@
 const {MongoClient} = require('mongodb');
 const url = 'mongodb://localhost:27017';
 const client = new MongoClient(url);
-const database = 'e-comm';
+const databaseName = 'e-comm';
+const collectionName = 'products';
 
 
 async function dbconnect() {
       let result = await client.connect();
-      let db = result.db(database);
-        let collection = db.collection('products');
-        return collection;
+      let db = result.db(databaseName);
+      let collection = db.collection(collectionName);
+      return collection;
 }
 module.exports = dbconnect;

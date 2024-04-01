@@ -1,29 +1,20 @@
+/*--------------------------Basic Server Create-----------------------------*/
 // const http = require('http');
 // http.createServer((req, res) => {
 //   res.write("Hi This is Rajendra mca postgraduate of nit jamshedpur");
 //   res.end();
 // }).listen(8000);
 
+
+/*--------------------------installing npm i color ------------------------*/
 // const colors = require('colors');
 // console.log("rajendra".red);
 // console.log("Hi This is Rajendra sharma".blue);
 // console.log("Try Nodemon new");
 
-// const http = require('http');
-// const data = require('./data')
-// const app = require('./app');
 
-// http.createServer((req,res) => {
-//     // res.writeHead(200,{'Content-Type':'application\Json'})
-//     res.write(JSON.stringify(data));
-//     res.end();
-// }).listen(8000);
-// console.log(process.argv[0]);
 
-// const fs = require('fs');
-// const input = process.argv;
-// fs.writeFileSync(argv[])
-
+/* ------------------------ Handle Asynchonus using promises -------------------------------*/
 // console.log('Hi This is First Execution');
 // let a = 10;
 // let b = 0;
@@ -39,14 +30,10 @@
 //     console.log(a+b);
 //  })
 //  console.log();
-
-//Express 
-
-// const Express = require('express');
-// const app = Express();
-// const path = require('path');
+/*--------------------------------------------------------------------------------------------*/
 
 
+/*--------------------------------middileware---------------------------------*/
 // const reqfilter = (req,res,next) =>{
 //    if(!req.query.age) {
 //       res.send('please provide age');
@@ -57,6 +44,8 @@
 //       next();
 //    }
 // }
+
+
 // app.use(reqfilter);
 // const publicpath = path.join(__dirname, 'public');
 // console.log(publicpath);
@@ -92,6 +81,7 @@
 
 
 
+/*---------------------------------------------Database connection---------------------------*/
 // const {MongoClient} = require('mongodb');
 // const url = 'mongodb://localhost:27017';
 // const client = new MongoClient(url);
@@ -105,22 +95,72 @@
 //    // let response = await collection.find({}).toArray();
 //    // console.log(response);
 // }
+/*------------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------file System-----------------------*/
+// const fs = require('fs');
+// fs.writeFileSync("hello.txt", "This is Rajendra here");
+// console.log(__dirname);
+// console.log(__filename);
 
 
 
 
 
-const dbconnect = require('./mongodb');
 
- const main = async ()=> {
-   let data = await dbconnect();
-   data = await data.find().toArray();
-   console.log(data);
- }
+// This is for connectimg public path and about.html and also i have build here multiple html pages
+// const Express = require('express');
+// const path = require('path');
+// const app = Express();
+// const publicpath = path.join(__dirname, 'public');
 
-main();
+// app.use (Express.static(publicpath));
+// app.set('view engine', 'ejs');
+
+// app.get('/profile', (req, res) => {
+//       res.render('profile');
+// });
+
+// app.listen(8000);
 
 
 
+// const express = require('express');
+// const path = require('path');
+
+// const app = express();
+// const publicPath=path.join(__dirname,'public')
+
+// app.set('view engine','ejs');
+
+// app.get('',(_,resp)=>{
+//     resp.sendFile(`${publicPath}/index.html`)
+// });
+
+// app.get('/profile',(_,resp)=>{
+//     const user={
+//         name:'Peter',
+//         email:'peter@test.com',
+//         country:'USA'
+//     }
+//    resp.render('profile',{user})
+// });
+
+
+
+
+// app.get('/contact',(_,resp)=>{
+//     resp.sendFile(`${publicPath}/about.html`)
+// });
+
+// app.get('/help',(_,resp)=>{
+//     resp.sendFile(`${publicPath}/help.html`)
+// });
+
+// app.get('*',(_,resp)=>{
+//     resp.sendFile(`${publicPath}/nopage.html`)
+// });
+
+// app.listen(5000);
 
 
