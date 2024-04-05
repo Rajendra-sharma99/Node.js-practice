@@ -1,8 +1,8 @@
 const http = require('http');
 const data = require('./data');
 
-http.createServer((req,resp) => {
-resp.writeHead(500,{'Content-Type':'application\json'});
+http.createServer((req,res) => {
+res.writeHead(500,{'Content-Type':'application\json'});
 
 // resp.write(JSON.stringify(
 //       [
@@ -12,6 +12,6 @@ resp.writeHead(500,{'Content-Type':'application\json'});
 //       ]
 //     ));
 
-resp.write(JSON.stringify(data));
-resp.end();
+res.write(JSON.stringify(data));
+res.end();
 }).listen(5000);

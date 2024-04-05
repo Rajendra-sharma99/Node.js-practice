@@ -21,7 +21,7 @@ function checkAge(req, res, next) {
 function checkPassword(req, res, next) {
     const { password } = req.query;
 
-    // Assuming password is provided in request body
+    // password is provided in request body
     if (!password || password !== 'supersecret') {
         return res.status(401).send('Incorrect password');
     }

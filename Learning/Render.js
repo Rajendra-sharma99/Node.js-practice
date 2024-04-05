@@ -6,7 +6,6 @@ app.get("", (req, res) => {
     res.send(`
        <h1> Hi This is Actually h1 tag </h1>
     `)
-
 });
 
 app.get("/form", (req, res) => {
